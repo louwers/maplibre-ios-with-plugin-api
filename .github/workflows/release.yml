@@ -32,7 +32,7 @@ jobs:
       CHANGELOG_URL: ${{ inputs.changelog_url }}
       PLUGIN_API_REF: ${{ inputs.plugin_api_ref }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Download zip, compute checksum
         run: |
@@ -77,7 +77,7 @@ jobs:
           fi
 
       - name: Make release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           name: ${{ inputs.version }}
           tag_name: ${{ inputs.version }}
